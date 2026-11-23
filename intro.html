@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>イナクロ計算ツールの紹介｜イナクロツール</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#EDF0F6}
+a{color:#2147B8}a:hover{color:#141C33}
+</style>
+</head>
+<body>
+<div style="font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Yu Gothic', sans-serif; color: #141C33; background: #EDF0F6; line-height: 1.7; font-size: 16px">
+
+<nav style="background:#0B1022;padding:10px 20px"><div style="max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><a href="./" style="color:#D7DCEA;text-decoration:none;font-weight:700;font-size:14px;display:inline-flex;align-items:center;min-height:44px">← まとめに戻る</a><a href="https://inazumatool.github.io/Love-Kido/" style="color:#FFD21F;text-decoration:none;font-weight:700;font-size:14px;display:inline-flex;align-items:center;min-height:44px">計算ツールを開く →</a></div></nav>
+<!-- ヒーロー -->
+<header style="background: #141C33; color: #FFFFFF; padding: 72px 20px 80px">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="align-self: flex-start; background: #FFD21F; color: #141C33; font-weight: 700; font-size: 13px; padding: 4px 14px; border-radius: 999px">クラブメンバー専用ツール</span>
+<h1 style="margin: 0; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(34px, 5vw, 56px); line-height: 1.2">試練も、対戦も、<br>調べものも。</h1>
+<p style="margin: 0; font-size: 18px; color: #D7DCEA">イナクロ計算ツールは、試練のスコアと対戦の火力を、パッシブ・味方バフ・鍛錬・シールまで込みで自動計算します。キャラ・パッシブ・シール・必殺技を調べられるデータベースも、同じログインで使えます。</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="border: 1px solid #5D6681; border-radius: 999px; padding: 2px 12px; font-size: 14px; color: #D7DCEA">試練</span>
+<span style="border: 1px solid #5D6681; border-radius: 999px; padding: 2px 12px; font-size: 14px; color: #D7DCEA">対戦</span>
+<span style="border: 1px solid #FFD21F; border-radius: 999px; padding: 2px 12px; font-size: 14px; color: #FFD21F; font-weight: 700">データベース NEW</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<a href="#start" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 12px; background: #FFD21F; color: #141C33; font-weight: 700; text-decoration: none">はじめ方を見る</a>
+<a href="#database" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 12px; border: 2px solid #FFFFFF; color: #FFFFFF; font-weight: 700; text-decoration: none">データベースを見る</a>
+</div>
+</div>
+<div style="flex: 0 1 300px; min-width: 0; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px">
+<div style="width: 100%; max-width: 300px">
+<div style="width: 100%; background: #0B1022; border: 1px solid #2C3656; border-radius: 36px; padding: 10px; box-sizing: border-box; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45)"><video src="img/demo.mp4" poster="img/demo_poster.webp" autoplay muted loop playsinline aria-label="ツールを操作している画面の動画" style="display: block; width: 100%; aspect-ratio: 540 / 1052; border-radius: 28px; background: #EDF0F6; object-fit: cover"></video></div>
+</div>
+<span style="font-size: 13px; color: #9AA3BE; text-align: center">実際の画面（約30秒・音なし）<br>試練 → 対戦 → データベース</span>
+</div>
+</div>
+</header>
+
+<!-- 3つの機能 -->
+<section style="padding: 64px 20px">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(24px, 3.2vw, 34px)">3つでできていること</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<a href="#trial" style="text-decoration: none; color: #141C33; background: #FFFFFF; border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 7h8M8 11h2M12 11h2M8 15h2M12 15h2M8 18h8"></path></svg>
+<b style="font-size: 20px">試練</b>
+<span style="color: #5D6681">通常試練・クラブ試練のスコアを計算して、手持ちから一番点が出る編成を組みます。</span>
+</a>
+<a href="#battle" style="text-decoration: none; color: #141C33; background: #FFFFFF; border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M12 4v16"></path><circle cx="12" cy="12" r="3"></circle></svg>
+<b style="font-size: 20px">対戦</b>
+<span style="color: #5D6681">監督とフォーメーションに11人を置いて、シュート・ブロック・キャッチの火力を出します。</span>
+</a>
+<a href="#database" style="text-decoration: none; color: #141C33; background: #FFFBEA; border: 2px solid #FFD21F; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#141C33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"></path><path d="M3 13l9 5 9-5"></path></svg>
+<b style="font-size: 20px">データベース <span style="font-size: 12px; background: #141C33; color: #FFFFFF; padding: 2px 8px; border-radius: 999px; vertical-align: middle">NEW</span></b>
+<span style="color: #3A4360">パッシブ・シール・必殺技・秘伝書・キャラを、条件を選んで検索できます。</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- データベース（目立たせる） -->
+<section id="database" style="padding: 72px 20px; background: #141C33; color: #FFFFFF">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="align-self: flex-start; background: #FFD21F; color: #141C33; font-weight: 700; font-size: 13px; padding: 4px 14px; border-radius: 999px">NEW｜2026年11月に公開</span>
+<h2 style="margin: 0; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(28px, 4vw, 44px); line-height: 1.25">調べたいことは、<br>データベースで。</h2>
+<p style="margin: 0; font-size: 17px; color: #D7DCEA">「このパッシブ持ってるの誰だっけ」「このシールどこで手に入る？」を、ゲームを開かずに調べられます。計算ツールの右上の「データベース」から開けて、ログインもそのままです。</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<span style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; color: #141C33; font-weight: 700; font-size: 15px">パッシブ</span><span style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; color: #141C33; font-weight: 700; font-size: 15px">シール</span><span style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; color: #141C33; font-weight: 700; font-size: 15px">必殺技</span><span style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; color: #141C33; font-weight: 700; font-size: 15px">秘伝書</span><span style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; color: #141C33; font-weight: 700; font-size: 15px">キャラ</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<div style="background: #1E2847; border: 1px solid #2C3656; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 6px">
+<b style="font-size: 17px; color: #FFD21F">パッシブ</b>
+<span style="color: #D7DCEA">キック・ブロック・シュート技など効果の種類で絞り込み。バフとデバフは分けて探せて、値の大きい順にも並べられます。</span>
+</div>
+<div style="background: #1E2847; border: 1px solid #2C3656; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 6px">
+<b style="font-size: 17px; color: #FFD21F">シール</b>
+<span style="color: #D7DCEA">ゲームと同じアイコンで、メイン・サブ、ポジション、効果から探せます。配布か交換所かもわかります。</span>
+</div>
+<div style="background: #1E2847; border: 1px solid #2C3656; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 6px">
+<b style="font-size: 17px; color: #FFD21F">必殺技・秘伝書</b>
+<span style="color: #D7DCEA">属性や種類のほか、秘伝書があるかどうかや入手方法で絞り込めます。技レベルごとの威力も見られます。</span>
+</div>
+<div style="background: #1E2847; border: 1px solid #2C3656; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 6px">
+<b style="font-size: 17px; color: #FFD21F">キャラ</b>
+<span style="color: #D7DCEA">レベル（1〜440）と覚醒ランクを入れると、そのときのステータスが出ます。ステータスの伸び方の型でも分けられます。</span>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="img/s4.webp" alt="データベース：キャラ。Lv440・LEGENDARY+で、キャラのステータスが並んだ画面" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1600 / 1000; object-fit: cover; object-position: top; border-radius: 16px; border: 1px solid #D5DAE6; background: #FFFFFF">
+<figcaption style="font-size: 14px; color: #D7DCEA">キャラ：レベルと覚醒ランクを入れて、ステータスを見比べる</figcaption>
+</figure>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: start">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="img/s2.webp" alt="データベース：パッシブ。バフのキックで絞り込み、値が大きい順に並べた画面" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1600 / 1000; object-fit: cover; object-position: top; border-radius: 16px; border: 1px solid #D5DAE6; background: #FFFFFF">
+<figcaption style="font-size: 14px; color: #D7DCEA">パッシブ：効果を選んで、強い順に並べる</figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="img/s3.webp" alt="データベース：シール。シールの一覧。Lvごとの値と入手方法が並んだ画面" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1600 / 1000; object-fit: cover; object-position: top; border-radius: 16px; border: 1px solid #D5DAE6; background: #FFFFFF">
+<figcaption style="font-size: 14px; color: #D7DCEA">シール：Lvごとの値と、どこで手に入るか</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 試練 -->
+<section id="trial" style="padding: 64px 20px; background: #FFFFFF">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="color: #2147B8; font-weight: 700">試練タブ</span>
+<h2 style="margin: 0; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(24px, 3.2vw, 34px)">試練のスコア、もう手計算しない。</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<div style="border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 7h8M8 11h2M12 11h2M8 15h2M12 15h2M8 18h8"></path></svg>
+<b style="font-size: 18px">スコアを自動で計算</b>
+<span style="color: #5D6681">キャラを選ぶだけで、覚醒・レベル・鍛錬パッシブ、味方バフ、シール、相手の属性、チェーンまで込みのスコアを出します。内訳も1つずつ確認できます。</span>
+</div>
+<div style="border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="3"></circle><circle cx="17" cy="7" r="3"></circle><circle cx="12" cy="17" r="3"></circle><path d="M9.5 9l1.5 5.5M14.5 9L13 14.5"></path></svg>
+<b style="font-size: 18px">手持ちから最適編成</b>
+<span style="color: #5D6681">通常試練の攻撃・守備も、クラブ試練の3回分も。手持ちのキャラから一番点が出る5人・並び順・シールの付け方を組みます。</span>
+</div>
+<div style="border: 2px solid #FFD21F; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFBEA">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#141C33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<b style="font-size: 18px">強くするならこれ</b>
+<span style="color: #3A4360">秘伝書を覚えさせる・技Lvを上げる・シールを強化する・シールを手に入れる。どれをやると何点上がるかを、上がる順に並べます。</span>
+</div>
+<div style="border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"></path><circle cx="16" cy="6" r="2"></circle><circle cx="10" cy="12" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>
+<b style="font-size: 18px">条件を選んで組む</b>
+<span style="color: #5D6681">全キャラ・技Lv・秘伝書・シールを「手持ち」か「最大」から選んで、どこまで伸びるかを確かめられます。火・山・風・林の4属性をまとめて出すこともできます。</span>
+</div>
+<div style="border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+<b style="font-size: 18px">今日の試練がわかる</b>
+<span style="color: #5D6681">昨日・今日・明日の試練（相手の属性と攻撃／守備）を画面の上に出します。朝5時に切り替わります。</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 対戦 -->
+<section id="battle" style="padding: 64px 20px">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="color: #2147B8; font-weight: 700">対戦タブ</span>
+<h2 style="margin: 0; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(24px, 3.2vw, 34px)">対戦の火力も、11人まとめて。</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<div style="border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M12 4v16"></path><circle cx="12" cy="12" r="3"></circle></svg>
+<b style="font-size: 18px">監督とフォーメーション</b>
+<span style="color: #5D6681">監督と監督Lvを選んで、ゲームと同じ並びの11枠にキャラを置きます。FWのシュート、DFのブロック、GKのキャッチの火力が出ます。</span>
+</div>
+<div style="border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 5H6l6 7-6 7h12"></path></svg>
+<b style="font-size: 18px">パッシブをぜんぶ合計</b>
+<span style="color: #5D6681">11人ぶんのパッシブ（人数の条件つき）、監督・フォーメーションのパッシブ（発動するかの判定つき）、鍛錬、シール、ステージ効果を合計します。</span>
+</div>
+<div style="border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3M4 12h3M4 17h3M10 7h10M10 12h10M10 17h10"></path></svg>
+<b style="font-size: 18px">場面ごとの回数</b>
+<span style="color: #5D6681">「ドリブル成功」「シュートブロック失敗」などの回数を人ごとに入れると、「〜たび」の効果が回数ぶん重なります。</span>
+</div>
+<div style="border: 2px solid #FFD21F; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFBEA">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#141C33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg>
+<b style="font-size: 18px">相手のシュートを止められるか</b>
+<span style="color: #3A4360">相手のシュート値と、ブロックに入る人を選ぶと、GKに届く値と止められるかがわかります。相手のデバフ持ちも入れられます。</span>
+</div>
+<div style="border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7l2-3h4l2 3"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg>
+<b style="font-size: 18px">スクショから編成を読む</b>
+<span style="color: #5D6681">ゲームの編成画面のスクショを選ぶと、顔の画像から11人を読み取って編成に入れます。</span>
+</div>
+<div style="border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2147B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"></rect><rect x="13" y="3" width="8" height="8" rx="2"></rect><rect x="3" y="13" width="8" height="8" rx="2"></rect><path d="M17 14v6M14 17h6"></path></svg>
+<b style="font-size: 18px">編成は3つまで</b>
+<span style="color: #5D6681">編成1・2・3を切り替えて比べられます。シールは自動で配ったり、全部外したりできます。</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 実際の画面 -->
+<section id="screens" style="padding: 64px 20px; background: #FFFFFF">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(24px, 3.2vw, 34px)">実際の画面</h2>
+<span style="color: #5D6681">スマホで開いたときの画面です。キャラや数値はサンプルのデータです。</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<img src="img/s5.webp" alt="試練：最適編成の結果。試練タブで「手持ちから最適編成を組む」を押したあと。合計スコアと5人の点が見えるところ" loading="lazy" style="display: block; width: 100%; aspect-ratio: 390 / 760; object-fit: cover; object-position: top; border-radius: 16px; border: 1px solid #D5DAE6; background: #FFFFFF">
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 16px">ボタン1つで最適編成</b><span style="font-size: 14px; color: #5D6681">5人の並び・使う秘伝書・シールまで決めて、合計スコアを出します。</span></figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<img src="img/s6.webp" alt="試練：強くするならこれ。ランキングが並んでいるところ（上から5件くらい見えると◎）" loading="lazy" style="display: block; width: 100%; aspect-ratio: 390 / 760; object-fit: cover; object-position: top; border-radius: 16px; border: 1px solid #D5DAE6; background: #FFFFFF">
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 16px">強くするならこれ</b><span style="font-size: 14px; color: #5D6681">何をすると何点上がるかを、上がる順に。</span></figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<img src="img/s7.webp" alt="対戦：フィールド。対戦タブで11人を置き、FW・DF・GKの火力が出ているところ" loading="lazy" style="display: block; width: 100%; aspect-ratio: 390 / 760; object-fit: cover; object-position: top; border-radius: 16px; border: 1px solid #D5DAE6; background: #FFFFFF">
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 16px">対戦の火力</b><span style="font-size: 14px; color: #5D6681">ピッチの上に、1人ずつの火力が出ます。技がない場面は「－」です。</span></figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<img src="img/s8.webp" alt="対戦：止める。「止める」で相手のシュート値を選び、止められるかが出ているところ" loading="lazy" style="display: block; width: 100%; aspect-ratio: 390 / 760; object-fit: cover; object-position: top; border-radius: 16px; border: 1px solid #D5DAE6; background: #FFFFFF">
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 16px">止められるか</b><span style="font-size: 14px; color: #5D6681">GKに届く値と、あといくつ足りないかが出ます。</span></figcaption>
+</figure>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<img src="img/s9.webp" alt="PCで開いた画面。PCのブラウザで試練か対戦を開いた全体の画面（横長）。右上に「データベース ↗」が見えるもの" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1600 / 975; object-fit: cover; object-position: top; border-radius: 16px; border: 1px solid #D5DAE6; background: #FFFFFF">
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 16px">PCでも使えます</b><span style="font-size: 14px; color: #5D6681">画面右上の「データベース」から、そのままデータベースを開けます。</span></figcaption>
+</figure>
+</div>
+</section>
+
+<!-- はじめ方 -->
+<section id="start" style="padding: 64px 20px">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(24px, 3.2vw, 34px)">はじめ方は3ステップ</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Dela Gothic One', sans-serif; font-size: 40px; line-height: 1; color: #2147B8">1</span>
+<b style="font-size: 18px">ログインする</b>
+<span style="color: #5D6681">クラブのチャットに貼ってあるリンクから開き、配られたメンバーコードで入ります。パスワードを決めると、次からはゲームIDとパスワードで入れます。</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Dela Gothic One', sans-serif; font-size: 40px; line-height: 1; color: #2147B8">2</span>
+<b style="font-size: 18px">手持ちを入れる</b>
+<span style="color: #5D6681">「キャラ」タブで持っているキャラにチェック。コアメンバーの枠のレベル（5枠）を入れると、ステータスを自動で計算します。</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #D5DAE6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Dela Gothic One', sans-serif; font-size: 40px; line-height: 1; color: #2147B8">3</span>
+<b style="font-size: 18px">ボタンを押す</b>
+<span style="color: #5D6681">試練なら相手の属性を選んで「手持ちから最適編成を組む」。対戦なら監督を選んで11人を置くだけです。</span>
+</div>
+</div>
+<div style="background: #141C33; color: #FFFFFF; border-radius: 16px; padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center">
+<b style="color: #FFD21F">もっと正確にしたいときは</b>
+<span style="color: #D7DCEA">技Lv・覚えさせた技・覚醒ランク・鍛錬パッシブ・手持ちシール・秘伝書を入れるほど、結果がゲームに近づきます。</span>
+</div>
+</div>
+</section>
+
+<!-- よくある質問 -->
+<section style="padding: 64px 20px; background: #FFFFFF">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(24px, 3.2vw, 34px)">よくある質問</h2>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="background: #EDF0F6; border-radius: 14px; padding: 18px 22px">
+<b>Q. 入力したデータはどこに残りますか？</b>
+<p style="margin: 6px 0 0; color: #5D6681">自分のアカウントに自動で保存されます。どの端末で開いても同じデータが出ます。「保存コード」はバックアップ用です。</p>
+</div>
+<div style="background: #EDF0F6; border-radius: 14px; padding: 18px 22px">
+<b>Q. スマホとPCで同時に使えますか？</b>
+<p style="margin: 6px 0 0; color: #5D6681">同時に使えるのは1台だけです。別の端末でログインすると、前の端末はログアウトします。</p>
+</div>
+<div style="background: #EDF0F6; border-radius: 14px; padding: 18px 22px">
+<b>Q. データベースは別にログインが必要ですか？</b>
+<p style="margin: 6px 0 0; color: #5D6681">いりません。同じブラウザで計算ツールに入っていれば、そのまま開けます。データベースの数値は、レベルと覚醒ランクをかけた値です（装備・コア枠・パッシブ・シールは入っていません）。</p>
+</div>
+<div style="background: #EDF0F6; border-radius: 14px; padding: 18px 22px">
+<b>Q. 計算はどれくらい正確ですか？</b>
+<p style="margin: 6px 0 0; color: #5D6681">素のステータスは、ゲーム画面の値と一致することを確かめています。データはゲーム画面を正としているので、違うところに気づいたら教えてください。</p>
+</div>
+<div style="background: #EDF0F6; border-radius: 14px; padding: 18px 22px">
+<b>Q. 何を入れればいいか分かりません</b>
+<p style="margin: 6px 0 0; color: #5D6681">まずは「持っているキャラにチェック」と「コア枠のレベル」だけで大丈夫です。慣れてきたら、技Lvやシールを足していきましょう。</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- お約束 -->
+<footer style="padding: 56px 20px 72px; background: #141C33; color: #FFFFFF">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(22px, 3vw, 30px)">使うときのお約束</h2>
+<ul style="margin: 0; padding-left: 1.2em; color: #D7DCEA; display: flex; flex-direction: column; gap: 6px">
+<li>使えるのは、このクラブのメンバーだけです。</li>
+<li>ツールのリンクや自分のメンバーコード・パスワードを、クラブの外に共有しないでください。</li>
+<li>「ここがおかしい」「こうしてほしい」など、感想は何でも管理者まで。</li>
+</ul>
+<p style="margin: 8px 0 0; font-size: 13px; color: #9AA3BE">最新の変更は、ツールの「更新」タブ（パッチノート）で確認できます。</p>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
